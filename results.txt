@@ -1,0 +1,25 @@
+
+
+
+=============================================
+  lncRNA × TE Overlap Analysis
+=============================================
+  lncRNA BED : lncRNAs_only.bed
+  TE BED     : Panda_AT-TEs_annotation_v1.0.bed
+  Output dir : overlap_results/
+
+[1/5] Cleaned TE file → overlap_results//TE_no_header.bed
+[2/5] Sorted input files
+[3/5] TE-overlapping lncRNAs → overlap_results//lncRNAs_TE_overlapping.bed
+      (with TE metadata) → overlap_results//lncRNAs_TE_overlap_with_metadata.bed
+[4/5] TE-free lncRNAs       → overlap_results//lncRNAs_TE_free.bed
+
+[5/5] Summary
+─────────────────────────────────────────────
+  Total lncRNAs:            11071
+  TE-overlapping lncRNAs:    2598  (23.4%)
+  TE-free lncRNAs:           8473  (76.5%)
+─────────────────────────────────────────────
+
+Next step: run step3_methylation_context.py on each accession's
+bisulfite file, using lncRNAs_TE_free.bed and/or lncRNAs_TE_overlapping.bed
